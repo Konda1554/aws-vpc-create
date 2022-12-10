@@ -66,7 +66,7 @@
         resource_tags:
           Name: Project-IGW
       register: igw_out
-    - name: Create PubTRT For PubSub
+    - name: Create Pub RT For Pub Sub
       ec2_vpc_route_table:
         vpc_id: "{{vpc_out.vpc.id}}"
         region: "{{region}}"
@@ -75,10 +75,11 @@
           - "{{ pubsub2_out.subnet.id }}"
         routes:
           - dest: 0.0.0.0/0
-            gateway_id: "{{ igw.gateway_id }}"
+            gateway_id: "{{ igw_out.gateway_id }}"
         resource_tags:
           Name: public RT
         register: public_route_table
+
 
 
 
