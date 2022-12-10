@@ -70,7 +70,7 @@
       ec2_vpc_route_table:
         vpc_id: "{{vpc_out.vpc.id}}"
         region: "{{region}}"
-        resource_tags:
+        tags:
           Name: public RT
         subnets:
           - "{{ pubsub1_out.subnet.id }}"
@@ -78,7 +78,7 @@
         routes:
           - dest: 0.0.0.0/0
             gateway_id: "{{ igw_out.gateway_id }}"
-        register: public_route_table
+        register: public_rt_out
 
 
 
