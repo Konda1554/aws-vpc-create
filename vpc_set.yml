@@ -1,10 +1,10 @@
 - hosts: localhost
   connection: local
-  gather_facts: false
+  gather_facts: False
   tasks:
     - name: Import VPC Variables
       include_vars: vars/vpc-setup
-    - name: Create project vpc
+    - name: Create Project VPC
       ec2_vpc_net:
         name: "{{vpc_name}}"
         cidr_block: "{{vpcCidr}}"
@@ -14,8 +14,6 @@
         tenancy: default
         state: "{{state}}"
       register: vpcout
-    - debug:
-        var: vpcout
 
 
 
