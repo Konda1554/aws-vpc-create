@@ -4,7 +4,7 @@
   tasks:
     - name: Import VPC Variables
       include_vars: vars/vpc-setup
-    - name: Create web-vpc
+    - name: Create project vpc
       ec2_vpc_net:
         name: "{{vpc_name}}"
         cidr_block: "{{vpcCidr}}"

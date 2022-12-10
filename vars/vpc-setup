@@ -1,4 +1,4 @@
-vpc_name: "webproject-vpc"
+vpc_name: "Web project-vpc"
 
 # VPC Range
 vpcCidr: '20.0.0.o/16'
