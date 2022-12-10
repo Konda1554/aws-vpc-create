@@ -1,6 +1,6 @@
 - hosts: localhost
   connection: local
-  gather_facts: no
+  gather_facts: false
   tasks:
     - name: Import VPC Variables
       include_vars: vars/vpc-setup
@@ -14,5 +14,8 @@
         tenancy: default
         state: "{{state}}"
       register: vpcout
+    - debug:
+        var: vpcout
+
 
 
